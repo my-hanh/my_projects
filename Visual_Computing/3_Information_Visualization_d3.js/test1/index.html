@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Obesity among adults, BMI >= 30, prevalence (crude estimate) in Switzerland</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    html,
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+      font-family: "Raleway", sans-serif
+    }
+
+    #charts {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+
+    @media (min-width: 900px) {
+      #charts {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .chart {
+      background: #fff;
+      padding: 8px;
+      border: 1px solid #e6e6e6;
+      border-radius: 4px;
+      min-height: 240px;
+      box-sizing: border-box;
+    }
+
+    .controls {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    #chart { max-width: 760px; margin: 0 auto; }
+    .legend { font-size: 13px; margin-top: 12px; }
+    .status { color: #555; margin-bottom: 8px; }
+    .tooltip { position: absolute; pointer-events: none; background: rgba(0,0,0,0.7); color: white; padding: 6px 8px; border-radius: 4px; font-size: 12px; display: none; }
+  </style>
+</head>
+
+<body>
+  <div class="main" style="margin-left:300px;margin-top:43px;">
+
+      <header class="container" style="padding-top:22px">
+        <h5><b><img src="obesity.png" style="width:5%;height:5%;">  Obesity among adults, BMI >= 30, prevalence (crude estimate) in Switzerland</b></h5>
+      </header>
+      
+      <div class="container" style="padding:16px">
+        <div id="container" style="max-width:1200px">
+          <div class="controls" style="background:transparent;padding:0 4px">
+            <label for="dataset-select">Choose sex:</label>
+            <select id="dataset-select">
+              <option value="SEX_FMLE">Women</option>
+              <option value="SEX_MLE">Men</option>
+              <option value="SEX_BTSX" selected>Both</option>
+            </select>
+
+            <span id="status" style="margin-left:8px;color:#666;font-size:0.9em">Loading data…</span>
+          </div>
+
+          <div id="charts">
+            <div id="chart1" class="chart" aria-label="Pie chart">
+              <div id="chart"></div>
+              <div id="legend" class="legend"></div>
+              <div id="tooltip" class="tooltip"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </div>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+
+  <!-- Global error handling -->
+  <script>
+    (function(){
+      function showError(message) {
+        try {
+          const status = document.getElementById('status');
+          if (status) status.textContent = 'Error: ' + message;
+          const chart1 = document.getElementById('chart1') || document.getElementById('container');
+          if (chart1) {
+            chart1.innerHTML = '';
+            const pre = document.createElement('pre');
+            pre.style.whiteSpace = 'pre-wrap';
+            pre.style.color = '#a00';
+            pre.style.fontSize = '12px';
+            pre.textContent = message;
+            chart1.appendChild(pre);
+          }
+        } catch (e) {}
+      }
+
+      window.addEventListener('error', function (ev) {
+        showError((ev && ev.message) ? ev.message : String(ev));
+      });
+
+      window.addEventListener('unhandledrejection', function (ev) {
+        const reason = ev && ev.reason ? (ev.reason.message || String(ev.reason)) : String(ev);
+        showError('Unhandled promise rejection: ' + reason);
+      });
+    })();
+  </script>
+
+  <script src="./d3_pie_charts.js"></script>
+
+  <!-- Check if D3 is loaded -->
+  <script>
+    (function(){
+      setTimeout(() => {
+        const status = document.getElementById('status');
+        const chart1 = document.getElementById('chart1') || document.getElementById('container');
+        if (typeof window.d3 === 'undefined') {
+          const msg = 'D3 library not found. Check network or CDN blocking; open DevTools console for details.';
+          console.warn(msg);
+          if (status) status.textContent = 'Error: D3 not loaded';
+          if (chart1) {
+            chart1.innerHTML = '';
+            const p = document.createElement('p');
+            p.style.color = '#a00';
+            p.style.fontSize = '13px';
+            p.textContent = msg;
+            chart1.appendChild(p);
+          }
+        } else {
+          if (status) status.textContent = '';
+          console.log('[test1/index.html] d3 is present, version', window.d3 && window.d3.version);
+        }
+      }, 400);
+    })();
+  </script>
+
+</body>
+
+</html>
