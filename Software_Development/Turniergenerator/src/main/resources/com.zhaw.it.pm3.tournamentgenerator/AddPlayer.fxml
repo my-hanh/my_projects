@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.zhaw.it.pm3.tournamentgenerator.controller.AddPlayerController"
+            stylesheets="/style.css" styleClass="anchor-pane">
+
+    <VBox alignment="CENTER" spacing="25"
+          AnchorPane.topAnchor="20.0" AnchorPane.bottomAnchor="20.0"
+          AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+
+        <!-- Title -->
+        <Label text="Add New Player" styleClass="label-title"/>
+
+        <!-- Name Input Field -->
+        <VBox spacing="10">
+            <Label text="Player Name" styleClass="label-subtitle"/>
+            <TextField fx:id="playerName" promptText="Enter player name" styleClass="text-field"/>
+        </VBox>
+
+        <!-- Optional Email Input Field -->
+        <VBox spacing="10">
+            <Label text="Email" styleClass="label-subtitle"/>
+            <TextField fx:id="playerEmail" promptText="Enter player email if he should receive the Tournament tree" styleClass="text-field"/>
+        </VBox>
+
+        <!-- Error Label -->
+        <Label fx:id="errorLabel" text="Error message" visible="false" styleClass="label-error"/>
+
+        <!-- Buttons -->
+        <HBox alignment="CENTER" spacing="15">
+            <Button fx:id="addPlayerButton" text="Add" onAction="#addPlayerToList" styleClass="button button-primary"/>
+            <Button fx:id="exitButton" text="Cancel" onAction="#exitPlayerEditor" styleClass="button button-secondary"/>
+        </HBox>
+
+    </VBox>
+</AnchorPane>

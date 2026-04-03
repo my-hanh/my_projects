@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane fx:id="anchorPane" xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.zhaw.it.pm3.tournamentgenerator.controller.TreeUIController"
+            stylesheets="/style.css" styleClass="anchor-pane">
+
+    <!-- A VBox to stack the toolbar at top and scrollable content below -->
+    <VBox spacing="0" AnchorPane.topAnchor="0" AnchorPane.bottomAnchor="0"
+          AnchorPane.leftAnchor="0" AnchorPane.rightAnchor="0">
+        <ToolBar fx:id="toolBar" styleClass="tool-bar">
+            <HBox fx:id="buttonContainer" alignment="BASELINE_CENTER" spacing="30">
+                <Button fx:id="generateNewTreeButton" prefWidth="150" text="Baum neu generieren"
+                        onAction="#generateNewTree" styleClass="button button-primary"/>
+                <Button fx:id="startTournamentButton" prefWidth="150" text="Turnier starten"
+                        onAction="#openPlayTournament" styleClass="button button-primary"/>
+            </HBox>
+        </ToolBar>
+
+        <ScrollPane styleClass="scroll-pane" fitToWidth="false" fitToHeight="false" VBox.vgrow="ALWAYS">
+            <!-- tournamentPane will have its pref size set dynamically in code -->
+            <Pane fx:id="tournamentPane" styleClass="tournament-pane"/>
+        </ScrollPane>
+    </VBox>
+</AnchorPane>

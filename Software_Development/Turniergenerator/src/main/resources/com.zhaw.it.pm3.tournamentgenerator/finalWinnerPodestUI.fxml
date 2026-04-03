@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.zhaw.it.pm3.tournamentgenerator.controller.WinnerPodestController"
+            stylesheets="/style.css" styleClass="anchor-pane"
+            prefHeight="400.0" prefWidth="600.0">
+
+   <TableView fx:id="tableViewRanking" layoutX="326.0" layoutY="31.0" prefHeight="293.0" prefWidth="259.0"
+              AnchorPane.bottomAnchor="75.6" AnchorPane.leftAnchor="326.0" AnchorPane.rightAnchor="14.8" AnchorPane.topAnchor="31.0">
+      <columns>
+         <TableColumn fx:id="columnRank" prefWidth="51.6" text="Rank" />
+         <TableColumn fx:id="columnTeam" prefWidth="134.4" text="Team" />
+         <TableColumn fx:id="columnScore" prefWidth="67.6" text="Score" />
+      </columns>
+   </TableView>
+   <Button fx:id="returnButton" layoutX="426.0" layoutY="359.0" onAction="#returnToMainMenu" prefHeight="30.0" prefWidth="174.0"
+           styleClass="button-link" text="Return to menu" AnchorPane.bottomAnchor="11.0" AnchorPane.rightAnchor="0.0" />
+   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5E81AC" height="126.0" layoutX="120.0" layoutY="137.0" stroke="BLACK" strokeType="INSIDE" width="83.0"/>
+   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5E81AC" height="85.0" layoutX="37.0" layoutY="179.0" stroke="BLACK" strokeType="INSIDE" width="83.0"/>
+   <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#5E81AC" height="59.0" layoutX="203.0" layoutY="204.0" stroke="BLACK" strokeType="INSIDE" width="83.0"/>
+   <Text layoutX="150.0" layoutY="209.0" text="1."/>
+   <Text layoutX="67.0" layoutY="231.0" text="2."/>
+   <Text layoutX="233.0" layoutY="246.0" text="3."/>
+   <Text fx:id="textFirstPlace" layoutX="120.0" layoutY="123.0" text="..."
+         styleClass="podest-text" textAlignment="CENTER" wrappingWidth="83"/>
+   <Text fx:id="textSecondPlace" layoutX="37.0" layoutY="163.0" text="..."
+         styleClass="podest-text" textAlignment="CENTER" wrappingWidth="83"/>
+   <Text fx:id="textThirdPlace" layoutX="203.0" layoutY="188.0" text="..."
+         styleClass="podest-text" textAlignment="CENTER" wrappingWidth="83"/>
+</AnchorPane>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.zhaw.it.pm3.tournamentgenerator.controller.RegisterPlayersUIController"
+            stylesheets="/style.css" styleClass="anchor-pane">
+
+    <VBox spacing="10.0" AnchorPane.topAnchor="10.0" AnchorPane.bottomAnchor="10.0"
+          AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+        <TableView fx:id="playersTable" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="column1" text="Name" prefWidth="150.0" />
+                <TableColumn fx:id="column2" text="Position" prefWidth="150.0" />
+                <TableColumn fx:id="column3" text="Team" prefWidth="150.0" />
+                <TableColumn fx:id="column4" text="Age" prefWidth="150.0" />
+            </columns>
+        </TableView>
+        <Button fx:id="confirmButton" text="Bestätigen" alignment="CENTER" onAction="#handleConfirm" styleClass="button button-primary"/>
+    </VBox>
+</AnchorPane>

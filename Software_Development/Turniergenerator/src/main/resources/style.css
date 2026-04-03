@@ -1,0 +1,201 @@
+/* Base */
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 14px;
+    -fx-text-fill: #ECEFF4;
+    -fx-background-color: #2E3440;
+}
+
+.anchor-pane, .v-box, .h-box, .pane {
+    -fx-background-color: #2E3440;
+}
+
+/* Labels */
+.label-title {
+    -fx-font-size: 24px;
+    -fx-text-fill: #ECEFF4;
+    -fx-font-weight: bold;
+}
+
+.label-heading {
+    -fx-font-size: 18px;
+    -fx-text-fill: #ECEFF4;
+    -fx-font-weight: bold;
+}
+
+.label-subtitle {
+    -fx-font-size: 14px;
+    -fx-text-fill: #D8DEE9;
+}
+
+.label-error {
+    -fx-text-fill: #BF616A;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.label, .text {
+    -fx-text-fill: #ECEFF4;
+}
+
+/* Buttons */
+.button {
+    -fx-background-radius: 4;
+    -fx-font-size: 14px;
+    -fx-padding: 8 20;
+    -fx-text-fill: #FFFFFF; /* Brighter white text for dark buttons */
+    -fx-font-weight: bold;
+    -fx-background-color: #434C5E;
+}
+
+.button:hover {
+    -fx-background-color: #5E81AC;
+}
+.button:pressed {
+    -fx-background-color: #434C5E;
+}
+
+.button-secondary {
+    -fx-background-color: #4C566A;
+}
+.button-secondary:hover {
+    -fx-background-color: #5A6474;
+}
+
+.button-danger {
+    -fx-background-color: #BF616A;
+}
+.button-danger:hover {
+    -fx-background-color: #D08770;
+}
+
+.button-link {
+    -fx-background-color: transparent;
+    -fx-text-fill: #88C0D0;
+    -fx-underline: true;
+    -fx-font-weight: normal;
+}
+.button-link:hover {
+    -fx-text-fill: #81A1C1;
+}
+
+/* Inputs */
+.text-field,
+.password-field,
+.text-area,
+.combo-box {
+    -fx-background-color: #3B4252;
+    -fx-text-fill: #ECEFF4;
+    -fx-border-color: #434C5E;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-prompt-text-fill: #D8DEE9;
+}
+
+.text-field:focused,
+.password-field:focused,
+.text-area:focused,
+.combo-box:focused {
+    -fx-border-color: #81A1C1;
+}
+
+/* If you have a summary TextArea or TextField that is white or very light,
+   you can create a specific style class for it. For example, if the summary
+   TextArea is meant to be white or a lighter color:
+   Add a style class in the FXML: styleClass="summary-text-area"
+   and we define it here with darker text. */
+
+.summary-text-area {
+    -fx-background-color: #ECEFF4; /* Light or white background */
+    -fx-text-fill: #2E3440; /* Dark text for visibility on light background */
+    -fx-border-color: #D8DEE9;
+}
+
+/* ScrollPane */
+.scroll-pane {
+    -fx-background: #2E3440;
+    -fx-background-color: transparent;
+    -fx-hbar-policy: always;
+    -fx-vbar-policy: always;
+    -fx-border-color: #434C5E;
+}
+
+/* Tournament Pane */
+.tournament-pane {
+    -fx-background-color: #3B4252;
+    -fx-border-color: #434C5E;
+    -fx-border-width: 1px;
+}
+
+/* Tables */
+.table-view {
+    -fx-background-color: #3B4252;
+    -fx-control-inner-background: #3B4252;
+    -fx-control-inner-background-alt: #434C5E;
+    -fx-table-cell-border-color: #4C566A;
+    -fx-table-header-border-color: #4C566A;
+    -fx-selection-bar: #5E81AC;
+    -fx-selection-bar-text: #ECEFF4;
+}
+
+.table-view .column-header, .table-view .filler {
+    -fx-background-color: #434C5E;
+    -fx-text-fill: #ECEFF4;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+.table-view .cell {
+    -fx-border-color: #4C566A;
+    -fx-text-fill: #ECEFF4;
+}
+
+/* Toolbars */
+.tool-bar {
+    -fx-background-color: #3B4252;
+    -fx-border-color: #434C5E;
+    -fx-border-width: 0 0 1px 0;
+}
+
+/* ComboBox Base */
+.combo-box {
+    -fx-background-color: #3B4252;
+    -fx-text-fill: #ECEFF4;
+    -fx-border-color: #434C5E;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+    -fx-prompt-text-fill: #D8DEE9;
+}
+
+/* Focused state for ComboBox */
+.combo-box:focused {
+    -fx-border-color: #81A1C1;
+}
+
+/* Arrow styling to ensure visibility */
+.combo-box .arrow-button .arrow {
+    -fx-background-color: #ECEFF4; /* Light arrow for visibility */
+}
+
+/* List cells (dropdown items) inside the ComboBox */
+.combo-box .list-cell {
+    -fx-background: #3B4252; /* Dark background for cells */
+    -fx-text-fill: #ECEFF4;   /* Light text for readability */
+}
+
+/* Hover state for cells */
+.combo-box .list-cell:hover {
+    -fx-background: #434C5E; /* Slightly lighter on hover */
+}
+
+/* Selected cell styling */
+.combo-box .list-cell:filled:selected, .combo-box .list-cell:filled:selected:focused {
+    -fx-background: #5E81AC; /* Highlight selected item with a bluish color */
+    -fx-text-fill: #ECEFF4;  /* Ensure text is still readable */
+}
+
+.podest-text {
+    -fx-fill: #ECEFF4; /* Bright text color for dark backgrounds */
+    -fx-font-size: 18px; /* Adjust as needed */
+    -fx-font-weight: bold;
+}
