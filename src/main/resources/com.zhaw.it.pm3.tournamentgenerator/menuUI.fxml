@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400" prefWidth="600" stylesheets="/style.css" styleClass="anchor-pane"
+            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.zhaw.it.pm3.tournamentgenerator.controller.MainMenuUIController">
+
+    <VBox alignment="CENTER" prefHeight="400.0" prefWidth="600.0" spacing="30.0"
+          AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+
+        <Button fx:id="startTournamentButton" disable="true" onAction="#openTournamentConfig" text="Start New Tournament"
+                styleClass="button button-primary"/>
+
+        <Button fx:id="loadTournamentButton" disable="true" onAction="#openLoadTournamentPage" text="Load Tournament"
+                styleClass="button button-secondary"/>
+
+        <Button fx:id="signInButton" onAction="#openSignInUI" text="Sign in"
+                styleClass="button button-primary" style="-fx-background-color: black;"/>
+
+        <Label fx:id="welcomeAccountLabel" text="Welcome" textAlignment="CENTER" visible="false"
+               style="-fx-font-weight: bold; -fx-font-size: 18px;"/>
+    </VBox>
+
+</AnchorPane>

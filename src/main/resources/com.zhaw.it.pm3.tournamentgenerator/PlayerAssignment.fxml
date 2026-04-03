@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.zhaw.it.pm3.tournamentgenerator.controller.PlayerAssignmentController"
+            stylesheets="/style.css" styleClass="anchor-pane"
+            prefWidth="900.0" prefHeight="600.0">
+
+    <VBox alignment="TOP_CENTER" spacing="25" AnchorPane.topAnchor="10.0" AnchorPane.bottomAnchor="10.0"
+          AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+
+        <!-- Title -->
+        <Label text="Team Assignment" styleClass="label-title" />
+
+        <HBox alignment="TOP_CENTER" spacing="50">
+
+            <!-- Available Players Section -->
+            <VBox alignment="TOP_CENTER" spacing="15">
+                <Label text="Available Players" styleClass="label-heading" />
+                <TableView fx:id="availablePlayersTableView" prefHeight="400.0" prefWidth="250.0">
+                    <columns>
+                        <TableColumn fx:id="playerNameColumn" text="Player Name" minWidth="200.0"/>
+                    </columns>
+                </TableView>
+
+                <!-- Player Management Buttons -->
+                <HBox alignment="CENTER" spacing="10">
+                    <Button fx:id="addNewPlayerButton" text="Add" onAction="#addNewPlayer" styleClass="button button-primary"/>
+                    <Button fx:id="editPlayerButton" text="Edit" onAction="#editPlayer" styleClass="button button-secondary" style="-fx-background-color: #88C0D0;"/>
+                    <Button fx:id="deletePlayerButton" text="Delete" onAction="#deletePlayer" styleClass="button button-danger"/>
+                </HBox>
+            </VBox>
+
+            <!-- Assignment Buttons -->
+            <VBox alignment="CENTER" spacing="15">
+                <Button fx:id="addPlayerToTeamButton" text="➔" onAction="#addPlayerToTeam" styleClass="button-link" style="-fx-font-size: 24px;"/>
+                <Button fx:id="removePlayerFromTeamButton" text="⟵" onAction="#removePlayerFromTeam" styleClass="button-link" style="-fx-font-size: 24px;"/>
+            </VBox>
+
+            <!-- Teams and Team Players Section -->
+            <VBox alignment="TOP_CENTER" spacing="15">
+                <Label text="Teams" styleClass="label-heading" />
+                <TableView fx:id="teamsTableView" prefHeight="190.0" prefWidth="250.0">
+                    <columns>
+                        <TableColumn fx:id="teamNameColumn" text="Team Name" minWidth="200.0"/>
+                    </columns>
+                </TableView>
+                <HBox spacing="10" alignment="CENTER">
+                    <Button fx:id="renameTeamButton" text="Rename Team" onAction="#renameTeam" styleClass="button button-secondary"/>
+                </HBox>
+                <Label text="Team Players" styleClass="label-heading" />
+                <TableView fx:id="teamPlayersTableView" prefHeight="190.0" prefWidth="250.0">
+                    <columns>
+                        <TableColumn fx:id="teamPlayerNameColumn" text="Player Name" minWidth="200.0"/>
+                    </columns>
+                </TableView>
+            </VBox>
+        </HBox>
+
+        <!-- Buttons -->
+        <HBox alignment="CENTER" spacing="20">
+            <Button fx:id="generateRandomTeamsButton" text="Generate Random Teams" onAction="#generateRandomTeams" styleClass="button button-primary" style="-fx-background-color: #A3BE8C;"/>
+            <Button fx:id="backButton" text="Back" onAction="#backToCreateTournament" styleClass="button button-secondary"/>
+        </HBox>
+    </VBox>
+</AnchorPane>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="350.0" prefWidth="400.0" stylesheets="/style.css" styleClass="anchor-pane"
+            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.zhaw.it.pm3.tournamentgenerator.controller.SignInController">
+
+    <VBox alignment="CENTER" spacing="25"
+          AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0"
+          AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+
+        <!-- Title -->
+        <Label fx:id="titleLabel" text="Sign in" styleClass="label-title" />
+
+        <!-- Name Input Field -->
+        <VBox spacing="10">
+            <Label text="Username" styleClass="label-subtitle"/>
+            <TextField fx:id="usernameTextField" promptText="Enter username" styleClass="text-field"/>
+        </VBox>
+
+        <VBox spacing="10">
+            <Label text="Password" styleClass="label-subtitle"/>
+            <PasswordField fx:id="userPasswordField" promptText="Enter password" styleClass="password-field"/>
+        </VBox>
+
+        <Label fx:id="noAccountAvailable" onMouseClicked="#openNewAccountUI" text="If you dont have an account click here!"
+               styleClass="button-link" underline="true"
+               style="-fx-text-fill: #A3BE8C; -fx-padding: 0;"/>
+
+        <!-- Error Label -->
+        <Label fx:id="errorLabel" text="Error message" visible="false" styleClass="label-error" />
+
+        <!-- Buttons -->
+        <HBox alignment="CENTER" spacing="15">
+            <Button fx:id="confirmButton" onAction="#confirmUser" text="Confirm" styleClass="button button-primary"/>
+            <Button fx:id="cancelButton" onAction="#backToMainMenu" text="Cancel" styleClass="button button-secondary"/>
+        </HBox>
+
+    </VBox>
+</AnchorPane>

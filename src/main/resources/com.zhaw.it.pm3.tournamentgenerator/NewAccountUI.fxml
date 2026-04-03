@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="630.0" prefWidth="400.0" stylesheets="/style.css" styleClass="anchor-pane"
+            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.zhaw.it.pm3.tournamentgenerator.controller.NewAccountController">
+
+    <VBox alignment="CENTER" spacing="25"
+          AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0"
+          AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="20.0">
+
+        <!-- Title -->
+        <Label fx:id="titleLabel" text="New Account" styleClass="label-title" />
+
+        <!-- Name Input Field -->
+        <VBox spacing="10">
+            <Label text="Username" styleClass="label-subtitle"/>
+            <TextField fx:id="usernameTextField" promptText="Enter username" styleClass="text-field"/>
+        </VBox>
+
+        <!-- Password Input Field -->
+        <VBox spacing="10">
+            <Label text="Password" styleClass="label-subtitle"/>
+            <PasswordField fx:id="userPasswordField" promptText="Enter password" styleClass="password-field"/>
+        </VBox>
+
+        <VBox spacing="10">
+            <Label text="Confirm Password" styleClass="label-subtitle"/>
+            <PasswordField fx:id="userConfirmPasswordField" promptText="Enter password" styleClass="password-field"/>
+        </VBox>
+
+        <!-- Email Input Field -->
+        <VBox spacing="10">
+            <Label text="Enter your Email" styleClass="label-subtitle"/>
+            <TextField fx:id="senderEmailField" promptText="Enter Email" styleClass="text-field"/>
+        </VBox>
+
+        <VBox spacing="10">
+            <Label text="Enter the App Password of your Email" styleClass="label-subtitle"/>
+            <PasswordField fx:id="appPasswordField" promptText="Enter App password" styleClass="password-field"/>
+        </VBox>
+
+        <!-- Error Label -->
+        <Label fx:id="errorLabel" text="Error message" visible="false" styleClass="label-error" />
+
+        <!-- Buttons -->
+        <HBox alignment="CENTER" spacing="15">
+            <Button fx:id="confirmButton" onAction="#confirmLoginUser" text="Confirm" styleClass="button button-primary"/>
+            <Button fx:id="cancelButton" onAction="#backToSignInUI" text="Cancel" styleClass="button button-secondary"/>
+        </HBox>
+
+    </VBox>
+</AnchorPane>

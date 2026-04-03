@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="402.0" prefWidth="1000.0" stylesheets="/style.css" styleClass="anchor-pane"
+            xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.zhaw.it.pm3.tournamentgenerator.controller.LoadTournamentController">
+
+    <Button fx:id="returnButton" onAction="#returnToMenu" styleClass="button-link" text="Return to menu" AnchorPane.bottomAnchor="20.0" AnchorPane.rightAnchor="20.0" />
+    <Button fx:id="loadJSONFileButton" layoutX="409.0" layoutY="21.0" onAction="#loadJSONFile" text="Load JSON File" styleClass="button button-primary" AnchorPane.topAnchor="21.0" AnchorPane.leftAnchor="409.0"/>
+    <TextField fx:id="textfieldFile" layoutX="44.0" layoutY="21.0" prefHeight="49.0" prefWidth="191.0" AnchorPane.topAnchor="21.0" AnchorPane.leftAnchor="44.0" styleClass="text-field"/>
+    <Button fx:id="searchFileButton" layoutX="255.0" layoutY="21.0" onAction="#searchFile" text="Search File..." styleClass="button button-primary" prefHeight="49.0" prefWidth="147.0" AnchorPane.topAnchor="21.0" AnchorPane.leftAnchor="255.0"/>
+
+    <TableView fx:id="tableViewTournament" layoutX="17.0" layoutY="87.0" prefHeight="247.0" prefWidth="638.0"
+               AnchorPane.bottomAnchor="68.0" AnchorPane.leftAnchor="17.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="87.0">
+        <columns>
+            <TableColumn fx:id="columnName" prefWidth="200.0" text="Tournament Name" />
+            <TableColumn fx:id="columnID" prefWidth="200.0" text="Admin ID" />
+            <TableColumn fx:id="columnMode" prefWidth="200.0" text="Tournament Mode" />
+        </columns>
+    </TableView>
+
+    <Button fx:id="selectButton" layoutX="308.0" layoutY="342.0" onAction="#selectTournament" text="Select" styleClass="button button-primary" prefHeight="49.0" prefWidth="125.0"
+            AnchorPane.bottomAnchor="10.8" AnchorPane.leftAnchor="308.0"/>
+    <Label fx:id="labelAdminID" layoutX="146.0" layoutY="358.0" text="..." AnchorPane.bottomAnchor="26.8" AnchorPane.leftAnchor="146.0" />
+    <Label fx:id="labelAdminID1" layoutX="27.0" layoutY="358.0" text="Current Admin ID :" AnchorPane.bottomAnchor="26.8" AnchorPane.leftAnchor="27.0" />
+    <Label layoutX="44.0" layoutY="5.0" text="Filepath:" AnchorPane.leftAnchor="44.0" AnchorPane.topAnchor="5.0" />
+</AnchorPane>
